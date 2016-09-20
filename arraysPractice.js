@@ -173,28 +173,14 @@ function removeItem(myGroceryList, item) { //declaring a function that takes in 
 
 function addItem(myGroceryList, item) {
     var empty = [];
-    if (myGroceryList.includes(item)) {
+    if (item === undefined) {
         return empty;
-    } else {
+    } else if (!myGroceryList.includes(item)) {
         myGroceryList.unshift(item);
-    };
+    }
     return myGroceryList;
 }
 
-
-
-
-// function addItem(myGroceryList, item) {
-//     var empty = [];
-//     for (var i = 0; i < myGroceryList.length; i++) {
-//         if (myGroceryList[i] === undefined) {
-//             myGroceryList.shift(i, 1);
-//         } else {
-//           return empty;
-//         }
-//     }
-//     return myGroceryList;
-// }
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
@@ -207,7 +193,13 @@ function addItem(myGroceryList, item) {
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
 //Code Here
-
+function maker() {
+    var fillMe = [];
+    for (var i = 1; i <= 215; i++) {
+        fillMe.push(i);
+    }
+    return fillMe;
+}
 
 
 //Next Problem
