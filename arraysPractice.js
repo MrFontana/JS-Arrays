@@ -114,10 +114,10 @@ var getRandomArbitrary = function() {
 //Code Here
 function finder(arr) {
     if (arr.includes(getRandomArbitrary())) {
-      return true;
+        return true;
     } else {
-      return false;
-  }
+        return false;
+    }
 }
 //Code Here
 
@@ -131,7 +131,7 @@ var str = 'this is my sentence';
 
 //Code Here
 function reverse(str) {
-  return str.split('').reverse().join('');
+    return str.split('').reverse().join('');
 }
 
 
@@ -151,11 +151,50 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
+  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments.
+   When this happens, you will need to respond by returning an empty array.
 */
 
 //Code Here
+function removeItem(myGroceryList, item) { //declaring a function that takes in an array and an argument ((whatever item we want to remove from the array))
+    var empty = []; //declared an empty array to return if the item to remove was not in the original array
+    if (item === undefined) { //if the item is not part of the array it will show as undefined. if and when that happens it will cease functiojn and return empty array
+        return empty; //returning empty array
+    } else {
+        for (var i = 0; i < myGroceryList.length; i++) { //otherwise run a for loop to determine if the item is in the array
+            if (myGroceryList[i] === item) { //if the item is found at the iteration of the array
+                myGroceryList.splice(i, 1); //remove said item and end removal at next iteration
+            }
+        }
+        return myGroceryList; //return the updated list
+    }
+}
 
+
+function addItem(myGroceryList, item) {
+    var empty = [];
+    if (myGroceryList.includes(item)) {
+        return empty;
+    } else {
+        myGroceryList.unshift(item);
+    };
+    return myGroceryList;
+}
+
+
+
+
+// function addItem(myGroceryList, item) {
+//     var empty = [];
+//     for (var i = 0; i < myGroceryList.length; i++) {
+//         if (myGroceryList[i] === undefined) {
+//             myGroceryList.shift(i, 1);
+//         } else {
+//           return empty;
+//         }
+//     }
+//     return myGroceryList;
+// }
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
