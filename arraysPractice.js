@@ -213,6 +213,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //pro tip parseint that converts string into an integer
 // multiply string number by
 
+// function addTen(numbers) {
+//     var addedUp = [];
+//     parseInt(numbers) + 10;
+//     // for (var i = 0; i < numbers.length; i++) {
+//     //   parseInt(numbers[i]);
+//     //   numbers[i] + 10;
+//     // }
+//       addedUp.push(numbers);
+//       return addedUp;
+// }
 
 //Next Problem
 
